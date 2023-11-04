@@ -35,4 +35,5 @@ export interface IInput {
   required?: boolean;
   defaultValue?: string;
   icon: string;
+  from?: string;
 }

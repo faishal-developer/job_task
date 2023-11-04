@@ -4,14 +4,14 @@ import { useState } from "react";
 
 export const useLogin = () => {
   const { createUserWithPassword, signInWithPassword } = useFireBase();
-  const [registrationLoader, setRegistrationLoader] = useState();
+  const [registrationLoader, setRegistrationLoader] = useState(false);
   const [check, setCheck] = useState(false);
   const [error, setError] = useState("");
-  const [loginLoader, setloginLoader] = useState();
+  const [loginLoader, setloginLoader] = useState(false);
 
   // login
   const loginHandle = (values: any) => {
-    console.log(values);
+    setloginLoader(true);
     signInWithPassword(values, setloginLoader);
   };
 
@@ -22,7 +22,7 @@ export const useLogin = () => {
 
   // registration
   const registrationHandle = (values: any) => {
-    console.log("registrationHandle", values);
+    setRegistrationLoader(true);
     if (!check) {
       setError("true");
       return;

@@ -17,19 +17,21 @@ import { useLogin } from '../Registration/useRegistration.logic';
 import { Link } from 'react-router-dom';
 import useFireBase from '../Registration/useFireBase';
 import { useState } from 'react';
+import { setTitle } from '../../helper/LocalStorgeMS';
 
 function Login() {
   const { t } = useTranslation();
   const {loginSchema} = UseAuth();
-  const {loginHandle} =useLogin();
+  const {loginHandle,loginLoader} =useLogin();
   const {googleSignin} = useFireBase();
   const [,setGoogleSigninLoader] = useState(false)
 
+  setTitle('Stack | Login')
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.mainBox}>
         <h2 className={loginStyles.h2}>{t('auth.login')}</h2>
-        <p className={loginStyles.p}>Welcome back, you’ve been missed!</p>
+        <p className={loginStyles.p}>{t('auth.back')}</p>
         <div className={loginStyles.social}>
           <div onClick={() => {googleSignin(setGoogleSigninLoader) }} className={loginStyles.googleBtn}>
             <img className={loginStyles.socialImg} src={google}/>
@@ -53,7 +55,7 @@ function Login() {
                 type="text"
                 icon={email}
                 label="Email"
-                placeholder='Your Email'
+                placeholder={t('auth.email')}
                 required
               />
             </div>
@@ -68,26 +70,26 @@ function Login() {
                 icon={lock}
                 size="large"
                 label="User Password"
-                placeholder='Your Password'
+                placeholder={t('auth.password')}
                 required
               />
             </div>
             <div className={'mb-2'}>
               <input className={styles.checkbox} type='checkbox' value="ok" id="check"/>
-              <label htmlFor='check' className='muted-gray'> Remember Me</label>
+              <label htmlFor='check' className='muted-gray'>{t('auth.remember')}</label>
             </div>
             <Commonbutton
                 type="submit"
                 // onclickCallback={() => console.log(false)}
                 className={styles.button}
-                btnText="Sign In"
-                isLoading={false}
-                disabled={false}
+                btnText={t('auth.login')}
+                isLoading={loginLoader}
+                disabled={loginLoader}
             />
           </Form>
           <p className='muted-gray text-center'>
-            Don’t have an account yet? 
-            <Link to='/registration' className="secondary">Sign Up</Link>
+            {t('auth.not_r')} 
+            <Link to='/registration' className="secondary">{t('auth.register')}</Link>
           </p>
         </div>
       </div>

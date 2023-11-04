@@ -42,6 +42,9 @@ body{
     background-color:#377DFF;
     border: 1px solid transparent;
 }
+.bg-secondary-bar{
+    background-color:#377DFF;
+}
 .bg-secondary:hover{
     background-color:#F0F5FA;
     color: #377DFF;

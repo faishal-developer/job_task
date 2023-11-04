@@ -19,14 +19,16 @@ import { useLogin } from './useRegistration.logic';
 import { Link } from 'react-router-dom';
 import useFireBase from './useFireBase';
 import { useState } from 'react';
+import { setTitle } from '../../helper/LocalStorgeMS';
 
 function Registration() {
   const { t } = useTranslation();
   const [,setGoogleSigninLoader] = useState(false)
   const {RegistrationSchema} = UseAuth();
-  const {registrationHandle,onChange,check,error} = useLogin();
+  const {registrationHandle,onChange,check,error,registrationLoader} = useLogin();
   const {googleSignin} = useFireBase();
 
+  setTitle('Stack | Registration')
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.mainBox}>
@@ -55,7 +57,7 @@ function Registration() {
                 type="text"
                 icon={email}
                 label="Email"
-                placeholder='Your Email'
+                placeholder={t('auth.email')}
                 required
               />
             </div>
@@ -65,7 +67,7 @@ function Registration() {
                 type="text"
                 icon={smily}
                 label="Name"
-                placeholder='Your Name'
+                placeholder={t('auth.fullName')}
                 required
               />
             </div>
@@ -80,25 +82,26 @@ function Registration() {
                 icon={lock}
                 size="large"
                 label="User Password"
-                placeholder='Your Password'
+                placeholder={t('auth.password')}
+                from="register"
                 required
               />
             </div>
             <div className={'mb-2'}>
               <input checked={check} onChange={onChange} className={styles.checkbox} type='checkbox' value="ok" id="check"/>
-              <label htmlFor='check' className={error?'errorMessage':'muted-gray'}> I agree to the Terms & Conditions</label>
+              <label htmlFor='check' className={error?'errorMessage':'muted-gray'}> {t('auth.agreement')}</label>
             </div>
             <Commonbutton
                 type="submit"
                 className={styles.button}
-                btnText="Sign Up"
-                isLoading={false}
-                disabled={false}
+                btnText={t('auth.register')}
+                isLoading={registrationLoader}
+                disabled={registrationLoader}
             />
           </Form>
           <p className='muted-gray text-center'>
-            Already have an account? 
-            <Link to="/login" className="secondary">Sign In</Link>
+            {t('auth.allReady_R')} 
+            <Link to="/login" className="secondary"> {t('auth.login')}</Link>
           </p>
         </div>
       </div>

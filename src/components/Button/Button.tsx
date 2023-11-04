@@ -19,13 +19,7 @@ const Commonbutton = (props:Iprops) => {
             disabled={props.isLoading || props.disabled}
         >
             {/* button loader */}
-            {
-                props.isLoading && (
-                    <div className="spinner-border spinner-border-sm" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
-                )
-            }
+            
             {props.btnText}
         </button>
     );

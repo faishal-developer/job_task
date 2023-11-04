@@ -19,3 +19,7 @@ export const getDataLS = (property: string) => {
 export const DeleteDataLS = (property: string) => {
   localStorage.removeItem(property);
 };
+
+export const setTitle = (title: string) => {
+  document.title = title;
+};
