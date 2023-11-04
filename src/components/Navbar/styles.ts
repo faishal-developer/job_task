@@ -1,0 +1,17 @@
+export const styles = {
+  continer: "container mx-auto p-4 flex justify-between items-center",
+  continer2: "p-4 flex justify-between items-center w-full mb-3",
+  search: "flex items-center bg-gray-white p-2 rounded-xl px-4",
+  user: "flex items-center",
+  icons: "w-5 h-5",
+  notification: "w-7 h-7 me-7",
+  input: "bg-gray-white w-60 border-0 outline-0 muted-gray",
+  mainContainer: " h-screen  w-60 pe-2",
+  sideContainer: "p-4 pt-3 fixed border-gray border-r-1 h-full",
+  side_p: "p-2 muted-gray mb-4",
+  side_items: "",
+  side_item: "flex items-center px-2 py-3 rounded-xl",
+  side_img: "me-3",
+  side_i_p: "muted-gray",
+  logo: "mb-5 p-2",
+};

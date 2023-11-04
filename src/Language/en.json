@@ -1,0 +1,26 @@
+{
+    "Dashboard": "Dashboard",
+    "language":"Language",
+    "login":"Login",
+    "profile":"Profile",
+    "auth": {
+        "get_start":"Getting Started",
+        "create_account":"Create an account to continue!",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "altPhone": "Alt. Phone",
+        "password": "password",
+        "re_password":"Retype password",
+        "register": "Register",
+        "login": "Sign in",
+        "logout":"Logout",
+        "r_google": "Sign Up With Google",
+        "r_apple": "Sign Up With Apple ID",
+        "allReady_R": "Allready registerd? Go back to login page.",
+        "l_google": "Login with Google",
+        "not_r": "Not registerd yet?Please register now.",
+        "or":"OR"
+    },
+    "number": {"0": "0","1": "1","2": "2","3": "3","4": "4","5": "5","6": "6","7": "7","8": "8","9": "9"}
+}

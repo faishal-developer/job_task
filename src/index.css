@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    font-weight: 500;
+}
+.bg-gray-white,.active,.apple{
+    background-color: #F0F5FA;
+}
+.gray-white{
+    color: #F0F5FA;
+}
+
+.muted-white{
+    color:#B0B7C3;
+}
+.bg-muted-white{
+    background-color:#B0B7C3;
+}
+.h-80vh{
+    height: 80vh;
+}
+.muted-black{
+    color:#323B4B
+}
+.muted-gray{
+    color:#8A94A6;
+}
+.border-gray{
+    border-right:2px solid #F0F5FA;
+}
+.error{
+    border:1px solid #FF5630 !important;
+}
+.errorMessage{
+    color:#FF5630 !important;
+}
+.secondary{
+    color:#377DFF;
+}
+.bg-secondary{
+    background-color:#377DFF;
+    border: 1px solid transparent;
+}
+.bg-secondary:hover{
+    background-color:#F0F5FA;
+    color: #377DFF;
+    border: 1px solid #377DFF;
+}
+.social-icon:hover{
+    background-color:#377DFF;
+    color:white
+}
+
+.user_text_color{
+
+}
+
+.apple{
+    cursor: no-drop;
+}

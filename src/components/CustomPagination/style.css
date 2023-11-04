@@ -1,0 +1,27 @@
+.pagination-container{
+    display: flex;
+    margin: 15px 0;
+}
+.pagination-item{
+    padding: 5px 11px;
+    border:1px solid #B0B7C3;
+    margin: 0 3px;
+    border-radius: 9px;
+    color:#323B4B;
+    cursor: pointer;
+}
+
+.dots{
+    border:none;
+    cursor:text;
+}
+
+.selected{
+    background-color: #377DFF;
+    color: white;
+}
+
+.disabled{
+    cursor: no-drop;
+    color: #B0B7C3;
+}
