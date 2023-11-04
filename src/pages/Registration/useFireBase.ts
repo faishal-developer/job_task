@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* @ts-ignore */
 import {
   getAuth,
   onAuthStateChanged,
@@ -30,7 +32,7 @@ const useFireBase = () => {
   const navigate = useNavigate();
 
   // const [user, setUser] = useState({})
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading] = useState(true);
 
   const addUserOnMongodb = (body: any) => {
     console.log("addUserOnMongodb", body);

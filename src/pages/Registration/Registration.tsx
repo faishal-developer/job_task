@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-constant-condition */
+/* @ts-ignore */
 import google from '../../assets/28638635916000402301.png';
 import apple from '../../assets/7829863615301033041.png';
 import { loginStyles } from '../constants/LoginStyles';
@@ -20,7 +22,7 @@ import { useState } from 'react';
 
 function Registration() {
   const { t } = useTranslation();
-  const [googleSigninLoader,setGoogleSigninLoader] = useState(false)
+  const [,setGoogleSigninLoader] = useState(false)
   const {RegistrationSchema} = UseAuth();
   const {registrationHandle,onChange,check,error} = useLogin();
   const {googleSignin} = useFireBase();

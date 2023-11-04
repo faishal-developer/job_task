@@ -1,5 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-constant-condition */
+
 import google from '../../assets/28638635916000402301.png';
 import apple from '../../assets/7829863615301033041.png';
 import { loginStyles } from '../constants/LoginStyles';
@@ -22,7 +23,7 @@ function Login() {
   const {loginSchema} = UseAuth();
   const {loginHandle} =useLogin();
   const {googleSignin} = useFireBase();
-  const [googleSigninLoader,setGoogleSigninLoader] = useState(false)
+  const [,setGoogleSigninLoader] = useState(false)
 
   return (
     <div className={loginStyles.container}>

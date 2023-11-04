@@ -8,6 +8,7 @@ const initialState = {
     photoURL: "",
     _id: "",
   },
+  isLoading: false,
 };
 
 export const userSlice = createSlice({

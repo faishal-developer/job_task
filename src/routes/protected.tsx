@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* @ts-ignore */
 import { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAppSelector } from "../redux/hook";
+import CustomPageLoader from "../components/PageLoader/Index";
 
 interface IProps {
   children: ReactNode;
@@ -12,7 +15,7 @@ export default function PrivateRoute({ children }: IProps) {
   const { pathname } = useLocation();
 
   if (isLoading) {
-    return (<p>Loading...</p>);
+    return (<CustomPageLoader pageLoader={true}/>);
   }
 
   if (!user.email && !isLoading) {

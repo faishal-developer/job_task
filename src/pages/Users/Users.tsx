@@ -10,7 +10,7 @@ type IUser={
     email:string;
 }
 const Users = () => {
-    const {page,setPage,data,isLoading} = UseUserLogic();
+    const {page,setPage,data} = UseUserLogic();
     return (
         <div className={styles.container}>
             <h2 className={styles.heading}>Users List</h2>
