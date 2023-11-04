@@ -21,8 +21,8 @@ import { toast } from "react-toastify";
 import { DeleteDataLS, createDataLS } from "../../helper/LocalStorgeMS";
 import { useNavigate } from "react-router-dom";
 
+// firebase initialized for authentication
 initializeFirebaseApp();
-//todo:read about xss attack and prevent it
 const googleProvider = new GoogleAuthProvider();
 //code started here
 const auth = getAuth();
@@ -34,8 +34,8 @@ const useFireBase = () => {
   // const [user, setUser] = useState({})
   const [isLoading] = useState(true);
 
+  // after authentication i saved it my database
   const addUserOnMongodb = (body: any) => {
-    console.log("addUserOnMongodb", body);
     PostPutPatch(`${Endpoints.sign_up}`, body, {
       thenCB: (res: any) => {
         dispatch(setUser(res.data.user));
@@ -49,6 +49,8 @@ const useFireBase = () => {
       method: "post",
     });
   };
+
+  // after authentication getting user from database
   const getUserFromMongodb = (body: any, isSignin: any) => {
     PostPutPatch(`${Endpoints.sign_in}`, body, {
       thenCB: (res: any) => {
@@ -106,6 +108,7 @@ const useFireBase = () => {
       });
   };
 
+  // onrealod it checks if user is logged in or not
   const onReloadSigninCheking = () => {
     onAuthStateChanged(auth, (result) => {
       if (result) {
@@ -116,6 +119,7 @@ const useFireBase = () => {
     });
   };
 
+  // google button signin
   const googleSignin = (loader: any) => {
     loader(true);
     signInWithPopup(auth, googleProvider)

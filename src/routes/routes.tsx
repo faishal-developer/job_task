@@ -6,9 +6,8 @@ import Registration from '../pages/Registration/Registration';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Users from '../pages/Users/Users';
 import PrivateRoute from './protected';
-// import PrivateRoute from './protected';
 
-//we have to use .tsx where we use jsx
+//all routes
 const routes = createBrowserRouter([
     {
         path:'/admin',
@@ -16,6 +15,10 @@ const routes = createBrowserRouter([
         children:[
             {
                 path:'/admin/users',
+                element:<Users/>,
+            },
+            {
+                path:'/admin/dashboard',
                 element:<Users/>,
             }
         ]

@@ -14,8 +14,8 @@ const Users = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.heading}>Users List</h2>
+            {/* user table */}
             <table className={styles.table}>
-                    
                 <tbody>
                     <tr className={styles.tr}>
                         <td className={styles.tdFirst}>#ID</td>

@@ -9,9 +9,9 @@ export const useLogin = () => {
   const [error, setError] = useState("");
   const [loginLoader, setloginLoader] = useState();
 
+  // login
   const loginHandle = (values: any) => {
     console.log(values);
-
     signInWithPassword(values, setloginLoader);
   };
 
@@ -19,6 +19,8 @@ export const useLogin = () => {
     setCheck(!check);
     setError("");
   };
+
+  // registration
   const registrationHandle = (values: any) => {
     console.log("registrationHandle", values);
     if (!check) {

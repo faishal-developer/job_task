@@ -90,7 +90,6 @@ function Registration() {
             </div>
             <Commonbutton
                 type="submit"
-                // onclickCallback={() => console.log(false)}
                 className={styles.button}
                 btnText="Sign Up"
                 isLoading={false}

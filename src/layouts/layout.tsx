@@ -7,6 +7,7 @@ const Layout = () => {
     const navigate=useNavigate()
 
     useEffect(()=>{
+        // redirecting to login page
         if(location.pathname==='/'){
             navigate('/login')
         }
